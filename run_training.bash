@@ -4,7 +4,7 @@ cd lidar_viewer
 
 echo "Preparing LiDAR viewer data..."
 python prepare_yolo_split_lidar.py
-cd ../yolo_poles_lidar
+cd yolo_poles_lidar
 
 echo "Launching training..."
 rm -r runs/detect/train

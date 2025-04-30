@@ -1,6 +1,0 @@
-names:
-- snow_pole
-nc: 1
-path: /cluster/home/tbguyot/mini-proyecto/yolo_poles_lidar
-train: images/train
-val: images/val
