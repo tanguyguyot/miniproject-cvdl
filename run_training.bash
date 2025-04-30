@@ -6,7 +6,7 @@ echo "Preparing LiDAR viewer data..."
 python prepare_yolo_split_lidar.py
 cd yolo_poles_lidar
 
-echo "Launching training..."
+echo "Launching training for LiDAR..."
 rm -r runs/detect/train
 yolo detect train data=data.yaml model=yolov8n.pt epochs=50 imgsz=640
 
@@ -15,4 +15,33 @@ scp -r runs/detect/train/ ~/Downloads/yolo_results
 
 echo "Best model saved to : runs/detect/train/weights/best.pt"
 echo "Running YOLOv8 validation..."
+rm -r runs/detect/val
 yolo detect val model=runs/detect/train/weights/best.pt data=data.yaml imgsz=640
+
+echo "Validation complete. Copying results to Downloads folder..."
+scp -r runs/detect/val/ ~/Downloads/yolo_results
+
+# RGB dataset
+echo "Now running on RGB dataset..."
+cd ../../rgb_viewer
+
+echo "Preparing RGB data..."
+python prepare_yolo_split_rgb.py
+cd yolo_poles_rgb
+
+echo "Launching training for RGB..."
+rm -r runs/detect/train
+yolo detect train data=data.yaml model=yolov8n.pt epochs=50 imgsz=640
+
+echo "Training complete. Copying results to Downloads folder..."
+scp -r runs/detect/train/ ~/Downloads/yolo_results
+echo "Best model saved to : runs/detect/train/weights/best.pt"
+
+echo "Running YOLOv8 validation..."
+rm -r runs/detect/val
+yolo detect val model=runs/detect/train/weights/best.pt data=data.yaml imgsz=640
+
+echo "Validation complete. Copying results to Downloads folder..."
+scp -r runs/detect/val/ ~/Downloads/yolo_results
+echo "All done! Results are in ~/Downloads/yolo_results"
+echo "You can now run the LiDAR viewer with the trained model."

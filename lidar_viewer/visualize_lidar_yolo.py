@@ -6,6 +6,8 @@ from PIL import Image
 # === Edit these paths according to your system ===
 IMAGE_DIR="/cluster/projects/vc/data/ad/open/Poles/lidar/combined_color/train"
 LABEL_DIR="/cluster/projects/vc/data/ad/open/Poles/lidar/labels/train"
+assert os.path.exists(IMAGE_DIR), f"Image directory {IMAGE_DIR} does not exist!"
+assert os.path.exists(LABEL_DIR), f"Label directory {LABEL_DIR} does not exist!"
 OUTPUT_DIR = "outputs"
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 

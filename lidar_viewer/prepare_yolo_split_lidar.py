@@ -9,7 +9,7 @@ from tqdm import tqdm
 # Parameters : change according to the location of your dataset (here: IDUN cluster)
 SOURCE_IMG_DIR = "/cluster/projects/vc/data/ad/open/Poles/lidar/combined_color"
 SOURCE_LBL_DIR = "/cluster/projects/vc/data/ad/open/Poles/lidar/labels"
-TARGET_DIR = Path("yolo_poles_lidar")
+TARGET_DIR = Path("./yolo_poles_lidar")
 TRAIN_SPLIT = 0.8
     
 # Check if yolo_poles_lidar/images and yolo_poles_lidar/labels are empty
