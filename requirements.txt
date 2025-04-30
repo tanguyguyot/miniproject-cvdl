@@ -1,0 +1,7 @@
+matplotlib
+pillow
+ultralytics
+pyyaml
+tqdm
+pathlib
+shutil

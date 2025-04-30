@@ -1,0 +1,2 @@
+- Eventually create a Python environment before 
+- Run the bash file to train and get inferences : sh run_training.bash (Linux shell)
