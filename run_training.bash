@@ -10,8 +10,7 @@ echo "Launching training..."
 rm -r runs/detect/train
 yolo detect train data=data.yaml model=yolov8n.pt epochs=50 imgsz=640
 
-echo "Training complete. Copying results to D
-ownloads folder..."
+echo "Training complete. Copying results to Downloads folder..."
 scp -r runs/detect/train/ ~/Downloads/yolo_results
 
 echo "Best model saved to : runs/detect/train/weights/best.pt"
