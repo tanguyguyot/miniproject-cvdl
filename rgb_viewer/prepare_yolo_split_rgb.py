@@ -7,8 +7,10 @@ from tqdm import tqdm
 
 # Input for the global variables
 # Parameters : change according to the location of your dataset (here: IDUN cluster)
-SOURCE_IMG_DIR = "/cluster/projects/vc/data/ad/open/Poles/rgb/images"
-SOURCE_LBL_DIR = "/cluster/projects/vc/data/ad/open/Poles/rgb/labels"
+# IDUN : /cluster/projects/vc/data/ad/open/Poles...
+# Cybele : /datasets/tdt4265/ad/Poles...
+SOURCE_IMG_DIR = "/datasets/tdt4265/ad/open/Poles/rgb/images"
+SOURCE_LBL_DIR = "/datasets/tdt4265/ad/open/Poles/rgb/labels"
 TARGET_DIR = Path("yolo_poles_rgb")
 TRAIN_SPLIT = 0.8
 assert os.path.exists(SOURCE_IMG_DIR), f"Source image directory {SOURCE_IMG_DIR} does not exist!"
