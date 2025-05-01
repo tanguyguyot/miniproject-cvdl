@@ -21,7 +21,7 @@ if lidar_or_rgb == "l":
 
 elif lidar_or_rgb == "r":
     # run inference on lidar data    
-    model = YOLO(BEST_MODEL_RGB)  # load a pretrained model (recommended for best results)
+    model = YOLO(BEST_MODEL_RGB)  
     test_img_dir = TEST_IMG_DIR_RGB
     output_dir = OUTPUT_DIR_RGB
     
@@ -31,13 +31,14 @@ else:
 
 images = os.listdir(test_img_dir)
 start_time = time.time()
-for img in images:
-    if img.endswith(".png") or img.endswith(".jpg") or img.endswith(".PNG"):
-        results = model(f"{test_img_dir}/{img}")
-        results[0].save(filename=f'{output_dir}/output_{img}')
+model.predict(
+source=test_img_dir,
+project=output_dir,
+name="predictions",
+save=True,
+save_txt=True,
+save_conf=True # <--- This adds the probability of each predicted box
+)
 duration = time.time() - start_time
 print(f"Time taken for {len(images)} images: {duration:.2f} seconds")
 print(f"Images per second: {len(images) / duration:.2f}")
-with open(f"{output_dir}/duration.txt", "w") as f:
-    f.write(f"Time taken for {len(images)} images: {duration:.2f} seconds\n")
-    f.write(f"Images per second: {len(images) / duration:.2f}\n")

@@ -1,2 +1,0 @@
-Time taken for 46 images: 12.43 seconds
-Images per second: 3.70
