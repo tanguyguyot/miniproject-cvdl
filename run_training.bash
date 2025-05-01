@@ -11,7 +11,8 @@ rm -r runs/detect/train
 yolo detect train data=data.yaml model=yolov8n.pt epochs=50 imgsz=640
 
 echo "Training complete. Copying results to Downloads folder..."
-scp -r runs/detect/train/ ~/Downloads/yolo_results
+mkdir -p ~/Downloads/yolo_results_lidar_train
+scp -r runs/detect/train/ ~/Downloads/yolo_results_lidar_train
 
 echo "Best model saved to : runs/detect/train/weights/best.pt"
 echo "Running YOLOv8 validation..."
@@ -19,7 +20,8 @@ rm -r runs/detect/val
 yolo detect val model=runs/detect/train/weights/best.pt data=data.yaml imgsz=640
 
 echo "Validation complete. Copying results to Downloads folder..."
-scp -r runs/detect/val/ ~/Downloads/yolo_results
+mkdir -p ~/Downloads/yolo_results_lidar_val
+scp -r runs/detect/val/ ~/Downloads/yolo_results_lidar_val
 
 # RGB dataset
 echo "Now running on RGB dataset..."
@@ -34,7 +36,8 @@ rm -r runs/detect/train
 yolo detect train data=data.yaml model=yolov8n.pt epochs=50 imgsz=640
 
 echo "Training complete. Copying results to Downloads folder..."
-scp -r runs/detect/train/ ~/Downloads/yolo_results
+mkdir -p ~/Downloads/yolo_results_rgb_train
+scp -r runs/detect/train/ ~/Downloads/yolo_results_rgb_train
 echo "Best model saved to : runs/detect/train/weights/best.pt"
 
 echo "Running YOLOv8 validation..."
@@ -42,6 +45,8 @@ rm -r runs/detect/val
 yolo detect val model=runs/detect/train/weights/best.pt data=data.yaml imgsz=640
 
 echo "Validation complete. Copying results to Downloads folder..."
-scp -r runs/detect/val/ ~/Downloads/yolo_results
+mkdir -p ~/Downloads/yolo_results_rgb_val
+scp -r runs/detect/val/ ~/Downloads/yolo_results_rgb_val
 echo "All done! Results are in ~/Downloads/yolo_results"
 echo "You can now run the LiDAR viewer with the trained model."
+

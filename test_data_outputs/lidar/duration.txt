@@ -1,0 +1,2 @@
+Time taken for 197 images: 12.14 seconds
+Images per second: 16.22
