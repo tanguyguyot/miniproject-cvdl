@@ -6,8 +6,8 @@ import time
 BEST_MODEL_LIDAR = "lidar_viewer/yolo_poles_lidar/runs/detect/train/weights/best.pt"
 BEST_MODEL_RGB = "rgb_viewer/yolo_poles_rgb/runs/detect/train/weights/best.pt"
 
-OUTPUT_DIR_LIDAR = "test_data_outputs/lidar"
-OUTPUT_DIR_RGB = "test_data_outputs/rgb"
+OUTPUT_DIR_LIDAR = "lidar_viewer/test_output"
+OUTPUT_DIR_RGB = "rgb_viewer/test_output"
 
 TEST_IMG_DIR_LIDAR = "lidar_viewer/lidar_test"
 TEST_IMG_DIR_RGB = "rgb_viewer/rgb_test"
