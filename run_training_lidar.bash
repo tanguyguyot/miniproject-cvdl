@@ -10,7 +10,7 @@ cd yolo_poles_lidar
 
 echo "Launching training for LiDAR..."
 rm -r runs/detect/train
-yolo detect train data=data.yaml model=yolov8n.pt epochs=50 imgsz=640
+yolo detect train data=data.yaml model=yolov8m.pt epochs=50 imgsz=640
 
 echo "Training complete. Copying results to Downloads folder..."
 # mkdir -p ~/Downloads/yolo_results_lidar_train

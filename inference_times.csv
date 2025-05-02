@@ -1,0 +1,10 @@
+Model Type,Model Name,Inference Time (s),Num Images,FPS
+LiDAR,v8m,22.90,197,8.60
+LiDAR,v8s,7.58,197,25.98
+LiDAR,v5m,7.19,197,27.40
+LiDAR,v5s,6.20,197,31.78
+LiDAR,v8n,6.19,197,31.82
+RGB,v8s,5.32,46,8.65
+RGB,v5s,3.96,46,11.62
+RGB,v8n,4.24,46,10.85
+RGB,v5n,4.04,46,11.39

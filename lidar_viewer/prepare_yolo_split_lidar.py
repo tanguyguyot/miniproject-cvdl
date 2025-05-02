@@ -9,8 +9,8 @@ from tqdm import tqdm
 # Parameters : change according to the location of your dataset (here: IDUN cluster)
 # IDUN : /cluster/projects/vc/data/ad/open/Poles...
 # Cybele : /datasets/tdt4265/ad/open/Poles...
-SOURCE_IMG_DIR = "/datasets/tdt4265/ad/open/Poles/lidar/combined_color"
-SOURCE_LBL_DIR = "/datasets/tdt4265/ad/open/Poles/lidar/labels"
+SOURCE_IMG_DIR = "/cluster/projects/vc/data/ad/open/Poles/lidar/combined_color"
+SOURCE_LBL_DIR = "/cluster/projects/vc/data/ad/open/Poles/lidar/labels"
 TARGET_DIR = Path("./yolo_poles_lidar")
 TRAIN_SPLIT = 0.8
     

@@ -1,6 +1,6 @@
 names:
 - snow_pole
 nc: 1
-path: /home/tbguyot/code/miniproject-cvdl/rgb_viewer/yolo_poles_rgb
+path:  /cluster/home/tbguyot/mini-proyecto/rgb_viewer/yolo_poles_rgb
 train: images/train
 val: images/val

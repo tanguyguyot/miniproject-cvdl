@@ -3,8 +3,8 @@ import os
 import time
 
 # path of the best trained model ; change if needed
-BEST_MODEL_LIDAR = "lidar_viewer/yolo_poles_lidar/runs/detect/train/weights/best.pt"
-BEST_MODEL_RGB = "rgb_viewer/yolo_poles_rgb/runs/detect/train/weights/best.pt"
+BEST_MODEL_LIDAR = "models/lidar/v5m/best.pt"
+BEST_MODEL_RGB = "models/rgb/v8n/best.pt"
 
 OUTPUT_DIR_LIDAR = "lidar_viewer/test_output"
 OUTPUT_DIR_RGB = "rgb_viewer/test_output"
@@ -15,7 +15,7 @@ TEST_IMG_DIR_RGB = "rgb_viewer/rgb_test"
 lidar_or_rgb = input("Lidar or rgb images? (l/r): ")
 if lidar_or_rgb == "l":
     # run inference on lidar data    
-    model = YOLO(BEST_MODEL_LIDAR)  # load a pretrained model (recommended for best results)
+    model = YOLO(BEST_MODEL_LIDAR)
     test_img_dir = TEST_IMG_DIR_LIDAR
     output_dir = OUTPUT_DIR_LIDAR
 

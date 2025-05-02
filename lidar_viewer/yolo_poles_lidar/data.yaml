@@ -1,6 +1,6 @@
 names:
 - snow_pole
 nc: 1
-path: /home/tbguyot/code/miniproject-cvdl/lidar_viewer/yolo_poles_lidar
+path: /cluster/home/tbguyot/mini-proyecto/lidar_viewer/yolo_poles_lidar
 train: images/train
 val: images/val
